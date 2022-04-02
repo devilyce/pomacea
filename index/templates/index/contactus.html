@@ -1,0 +1,83 @@
+{% load static %}
+
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-5 px-0">
+                <div class="contact-img">
+                </div>
+            </div>
+            <div class="col-7 mt-5 pb-4 px-4">
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="inputFname">First name</label>
+                            <input type="text" class="form-control" id="inputFname">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputLname">Last name</label>
+                            <input type="text" class="form-control" id="inputLname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="inputEmail">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputNumber" class="form-label">Contact No.</label>
+                            <input type="number" class="form-control" id="inputNumber">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="inputAddress">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="inputCity" class="form-label">City</label>
+                            <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">State</label>
+                            <select id="inputState" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="inputZip" class="form-label">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label>Estimated Loan Amount</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputLoanFrom" placeholder="from">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="inputLoanTo" placeholder="to">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mt-3 mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck2"
+                                   required>
+                            <label class="form-check-label" for="invalidCheck2">
+                                Agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn" type="submit">Submit form</button>
+                </form>
+            </div>
+        </div>
+</section><!-- End Contact Section -->
