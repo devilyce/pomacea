@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p7smj0dgbm$^%rxrbz85f(&d5)aplc*vyx^4d8l9%4reelj56*
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['http://pomacea.net/']
+ALLOWED_HOSTS = ['http://pomacea.net/', 'pomacea.net']
 
 # Application definition
 
