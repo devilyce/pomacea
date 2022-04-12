@@ -9,14 +9,16 @@
             </div>
             <div class="col-7 mt-5 pb-4 px-4">
                 <form>
+                    {% csrf_token %}
                     <div class="row">
-                        <div class="col-md-6">
-                            <label for="inputFname">First name</label>
-                            <input type="text" class="form-control" id="inputFname">
+                        <div class="col-md-4">
+                            {{ form.last_name }}
                         </div>
-                        <div class="col-md-6">
-                            <label for="inputLname">Last name</label>
-                            <input type="text" class="form-control" id="inputLname">
+                        <div class="col-md-4">
+                            {{form.first_name}}
+                        </div>
+                        <div class="col-md-4">
+                            {{form.middle_name}}
                         </div>
                     </div>
                     <div class="row">
@@ -26,7 +28,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="inputNumber" class="form-label">Contact No.</label>
-                            <input type="number" class="form-control" id="inputNumber">
+                            <input type="text" class="form-control" id="inputNumber">
                         </div>
                     </div>
                     <div class="row">
@@ -55,16 +57,11 @@
 
                     <div class="row">
                         <div class="col">
-                            <label>Estimated Loan Amount</label>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="inputLoanFrom" placeholder="from">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" id="inputLoanTo" placeholder="to">
-                                </div>
-
-                            </div>
+                            <label for="inquirytype" class="form-label">Type of Inquiry</label>
+                            <select id="inquirytype" class="form-select">
+                                <option selected>Choose...</option>
+                                <option>...</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col mt-3 mb-3">
