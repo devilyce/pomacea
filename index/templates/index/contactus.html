@@ -8,46 +8,50 @@
                 </div>
             </div>
             <div class="col-7 mt-5 pb-4 px-4">
-                <form>
+                <form method="post" id="inquiriesForm" data-cities-url="{% url 'ajax_load_cities' %}">
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-md-4">
+                            <label for="last_name" class="form-label">Last Name</label>
                             {{ form.last_name }}
                         </div>
                         <div class="col-md-4">
+                            <label for="first_name" class="form-label">First Name</label>
                             {{form.first_name}}
                         </div>
                         <div class="col-md-4">
+                            <label for="middle_name" class="form-label">Middle Name</label>
                             {{form.middle_name}}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <label for="inputEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="inputEmail">
+                        <div class="col-md-4">
+                            <label for="email" class="form-label">Email</label>
+                            {{form.email}}
                         </div>
-                        <div class="col-md-6">
-                            <label for="inputNumber" class="form-label">Contact No.</label>
-                            <input type="text" class="form-control" id="inputNumber">
+                        <div class="col-md-4">
+                            <label for="phone_number" class="form-label">Phone No.</label>
+                            {{form.phone_number}}
+                        </div>
+                        <div class="col-md-4">
+                            <label for="mobile_number" class="form-label">Mobile No.</label>
+                            {{form.mobile_number}}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            <label for="inputAddress" class="form-label">Address</label>
-                            <input type="text" class="form-control" id="inputAddress">
+                            <label for="address" class="form-label">Address</label>
+                            {{form.address}}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <label for="inputCity" class="form-label">City</label>
-                            <input type="text" class="form-control" id="inputCity">
+                        <div class="col-md-5">
+                            <label for="state" class="form-label">State</label>
+                            {{form.state}}
                         </div>
-                        <div class="col-md-4">
-                            <label for="inputState" class="form-label">State</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
+                        <div class="col-md-5">
+                            <label for="city" class="form-label">City</label>
+                            {{form.city}}
                         </div>
                         <div class="col-md-2">
                             <label for="inputZip" class="form-label">Zip</label>
@@ -57,11 +61,8 @@
 
                     <div class="row">
                         <div class="col">
-                            <label for="inquirytype" class="form-label">Type of Inquiry</label>
-                            <select id="inquirytype" class="form-select">
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
+                            <label for="inquiry_type" class="form-label">Type of Inquiry</label>
+                            {{form.inquiry_type}}
                         </div>
                     </div>
                     <div class="col mt-3 mb-3">
@@ -77,4 +78,5 @@
                 </form>
             </div>
         </div>
+    </div>
 </section><!-- End Contact Section -->

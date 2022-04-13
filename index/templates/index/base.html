@@ -32,6 +32,27 @@
 <!-- Template Main JS File -->
 <script src="{% static 'index/js/main.js' %}"></script>
 
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#id_state").change(function () {
+        const url = $("#inquiriesForm").attr("data-cities-url");
+        const stateId = $(this).val();
+
+        $.ajax({
+            url: url,
+            data: {
+                'state_id': stateId
+            },
+            success: function (data) {
+                $("#id_city").html(data);
+
+            }
+        });
+
+    });
+
+</script>
+
 </body>
 
 </html>

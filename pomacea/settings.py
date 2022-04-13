@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'index',
 
     # app
-    'inquirytype',
     'inquiryform',
 ]
 
