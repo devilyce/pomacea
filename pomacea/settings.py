@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # view
-    'index',
+    'home',
+    'mgmt',
 
     # app
     'inquiryform',
