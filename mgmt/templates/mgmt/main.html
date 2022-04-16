@@ -5,7 +5,7 @@
 
             <div class="card-header">
                 <i class="fas fa-table me-1"></i>
-                DataTable
+                Inquiry Data Table
             </div>
 
             <div class="card-body">
@@ -14,9 +14,10 @@
                     <thead>
 
                     <tr>
-                        <th>Iquiry Date</th>
+                        <th>Inquiry Date</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Inquiry Type</th>
                         <th>Status</th>
                         <th></th>
                     </tr>
@@ -24,19 +25,22 @@
                     </thead>
 
                     <tbody>
-
+                    {% for inquiry in queryset %}
                     <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
+                        <td>{{ inquiry.date_added }}</td>
+                        <td>{{ inquiry.first_name }} {{ inquiry.last_name }}</td>
+                        <td>{{ inquiry.email }}</td>
+                        <td>{{ inquiry.inquiry_type }}</td>
+                        <td>{{ inquiry.status }}</td>
+                        <td></td>
                     </tr>
+                    {% endfor %}
 
                     </tbody>
                 </table>
 
             </div>
+
         </div>
     </div>
 </main>

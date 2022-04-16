@@ -3,7 +3,7 @@ body {
  height:100%;
 }
 .btn {
-  background: #18d26e;
+  background: #85bb65;
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -57,7 +57,7 @@ body {
 
 #header h2 span {
   color: #fff;
-  border-bottom: 2px solid #18d26e;
+  border-bottom: 2px solid #85bb65;
   padding-bottom: 6px;
 }
 
