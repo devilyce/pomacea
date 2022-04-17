@@ -33,8 +33,8 @@
                         <label for="inquiry_type">Inquiry Type</label>
                         <select id="inquiry_type" class="form-control search-menu" name="inquiry_type">
                             <option selected>Choose...</option>
-                            {% for cat in categories %}
-                            <option value="{{ cat }}">{{ cat }}</option>
+                            {% for inquiry_type in inquiry_type %}
+                            <option value="{{ inquiry_type }}">{{ inquiry_type }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -43,8 +43,8 @@
                         <label for="status">Status</label>
                         <select id="status" class="form-control search-menu" name="status">
                             <option selected>Choose...</option>
-                            {% for cat in categories %}
-                            <option value="{{ cat }}">{{ cat }}</option>
+                            {% for status in status %}
+                            <option value="{{ status }}">{{ status }}</option>
                             {% endfor %}
                         </select>
                     </div>

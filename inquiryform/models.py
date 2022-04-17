@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class InquiryType(models.Model):
@@ -23,6 +24,13 @@ class City(models.Model):
         return self.name
 
 
+class Status(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+
 class Inquiries(models.Model):
     date_added = models.DateField(auto_now_add=True)
     first_name = models.CharField(max_length=200, null=True, blank=True)
@@ -36,9 +44,10 @@ class Inquiries(models.Model):
     city = models.ForeignKey(City, on_delete=models.SET_NULL, null=True)
     zip_code = models.CharField(max_length=200, null=True, blank=True)
     inquiry_type = models.ForeignKey(InquiryType, on_delete=models.SET_NULL, null=True)
-    status = models.CharField(max_length=200, null=True, blank=True)
+    status = models.ForeignKey(Status, default=1, on_delete=models.SET_DEFAULT)
 
-
+    def get_absolute_url(self):
+        return reverse('inquiry_detail', kwargs={'pk': self.pk})
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

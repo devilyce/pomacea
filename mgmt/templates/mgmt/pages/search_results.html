@@ -1,4 +1,7 @@
-<main>
+{% extends 'mgmt/widgets/base.html' %}
+{% load static %}
+{% block content %}
+
     <div class="container-fluid mt-4 px-4">
 
         <div class="card mb-4">
@@ -19,20 +22,20 @@
                         <th>Email</th>
                         <th>Inquiry Type</th>
                         <th>Status</th>
-                        <th></th>
+                        <th>View</th>
                     </tr>
 
                     </thead>
 
                     <tbody>
-                    {% for inquiry in queryset %}
+                    {% for queryset in queryset %}
                     <tr>
-                        <td>{{ inquiry.date_added }}</td>
-                        <td>{{ inquiry.first_name }} {{ inquiry.last_name }}</td>
-                        <td>{{ inquiry.email }}</td>
-                        <td>{{ inquiry.inquiry_type }}</td>
-                        <td>{{ inquiry.status }}</td>
-                        <td></td>
+                        <td>{{ queryset.date_added }}</td>
+                        <td>{{ queryset.first_name }} {{ queryset.last_name }}</td>
+                        <td>{{ queryset.email }}</td>
+                        <td>{{ queryset.inquiry_type }}</td>
+                        <td>{{ queryset.status }}</td>
+                        <td><a class="btn btn-default" href="{{ queryset.get_absolute_url }}">View</a></td>
                     </tr>
                     {% endfor %}
 
@@ -43,4 +46,5 @@
 
         </div>
     </div>
-</main>
+{% endblock %}
+
