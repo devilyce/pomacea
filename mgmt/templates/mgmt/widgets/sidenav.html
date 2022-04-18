@@ -1,14 +1,14 @@
 {% load static %}
 
 <div id="layoutSidenav_nav">
-    <nav class="sidenav accordion sidenav-dark" id="sidenavAccordion">
-        <div class="sidenav-menu">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
 
             <div class="nav">
 
                 <form action="{% url 'search_results' %}" method="get">
 
-                    <div class="sidenav-menu-heading">Search Date</div>
+                    <div class="sb-sidenav-menu-heading">Search Date</div>
                     <div class="form-group">
                         <label for="DateMin">Date From</label>
                         <input type="date" class="form-control search-menu" id="DateMin" name="date_min">
@@ -18,7 +18,7 @@
                         <input type="date" class="form-control search-menu" id="DateMax" name="date_max">
                     </div>
 
-                    <div class="sidenav-menu-heading">Search Name</div>
+                    <div class="sb-sidenav-menu-heading">Search Name</div>
                     <div class="form-group">
                         <div class="input-group sidebar-search">
                             <input type="search" class="form-control search-menu" name="name" placeholder="Search Name...">
@@ -28,7 +28,7 @@
                         </div>
                     </div>
 
-                    <div class="sidenav-menu-heading">Search By:</div>
+                    <div class="sb-sidenav-menu-heading">Search By:</div>
                     <div class="form-group">
                         <label for="inquiry_type">Inquiry Type</label>
                         <select id="inquiry_type" class="form-control search-menu" name="inquiry_type">

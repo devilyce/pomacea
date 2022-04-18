@@ -1,8 +1,11 @@
 from django.db.models import Q
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import DetailView
 
 from inquiryform.models import Inquiries, InquiryType, Status
+
+from inquiryform.forms import InquiriesEditForm, AddNotesForm
 
 
 def is_valid_queryparam(param):
@@ -51,7 +54,21 @@ def search_results(request):
     return render(request, 'mgmt/pages/search_results.html', context)
 
 
-class InquiryDetail(DetailView):
-    model = Inquiries
-    template_name = 'mgmt/pages/inquiry_detail.html'
-    context_object_name = 'data'
+def inquiry_detail(request, pk):
+    qs_inquiry_type = InquiryType.objects.all()
+    qs_status = Status.objects.all()
+    if pk:
+        data = Inquiries.objects.get(pk=pk)
+        form = InquiriesEditForm(request.POST or None, instance=data)
+        form2 = AddNotesForm(request.POST or None)
+
+        context = {'data': data, 'inquiry_type': qs_inquiry_type, 'status': qs_status, 'form': form, 'form2': form2}
+
+        if all([form.is_valid(), form2.is_valid]):
+            parent = form.save(commit=False)
+            parent.save()
+            child = form2.save(commit=False)
+            child.inquiries = parent
+            child.save()
+
+        return render(request, 'mgmt/pages/inquiry_detail.html', context)

@@ -1,7 +1,82 @@
 {% extends 'mgmt/widgets/base.html' %}
 {% load static %}
+
 {% block content %}
 
-{% for %}
+<div class="container-fluid mt-4 px-4">
+    <div class="card mb-4">
+        <div class="card-header">Inquiry Detail</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-9">
+                    <h5 class="card-title">{{ data.last_name }}, {{ data.first_name }} {{ data.middle_name }} </h5>
+
+                    <div class="row">
+                        <div class="col-lg-2 text-muted font-italic"><small>Email</small></div>
+                        <div class="col">{{ data.email }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 text-muted font-italic"><small>Conact No.</small></div>
+                        <div class="col">{{ data.phone_number }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 text-muted font-italic"><small>Moblie No.</small></div>
+                        <div class="col">{{ data.mobile_number }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 text-muted font-italic"><small>Address</small></div>
+                        <div class="col">{{ data.address }}. {{ data.city }}. {{ data.state }}. {{ data.zip_code }}.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+
+                            <hr>
+                            <div>Notes:</div>
+                            {% if not data.notes.all %}
+                            <p class="text-muted font-italic">Empty..</p>
+
+                            {% else %}
+
+                            {% for data in data.notes.all %}
+                            <sub class="text-muted">{{ data.date_added }}</sub>
+                            <p>{{ data.body }}</p>
+                            {% endfor %}
+
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col-lg-5 text-muted font-italic"><small>Type of Inquiry</small></div>
+                        <div class="col">{{ data.inquiry_type }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 text-muted font-italic"><small>Date of Inquiry</small></div>
+                        <div class="col">{{ data.date_added }}</div>
+                    </div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-5 text-muted font-italic"><small>Status</small></div>
+                            <div class="col">{{ form.status }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="text-muted font-italic"><small>Add Notes</small></div>
+                            <div>{{ form2.body }}</div>
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+
 
 {% endblock %}
