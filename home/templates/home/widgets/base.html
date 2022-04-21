@@ -21,10 +21,8 @@
 
 <body>
 
-{% include 'home/header.html' %}
-
-{% include 'home/contactus.html' %}
-
+{% block content %}
+{% endblock %}
 
 <!-- Vendor JS Files -->
 <script src="{% static 'home/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
@@ -50,6 +48,7 @@
         });
 
     });
+
 
 </script>
 

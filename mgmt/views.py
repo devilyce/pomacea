@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -12,6 +13,7 @@ def is_valid_queryparam(param):
     return param != '' and param is not None
 
 
+@login_required(login_url='login')
 def mgmt(request):
     qs_inquiry_type = InquiryType.objects.all()
     qs_status = Status.objects.all()
@@ -21,6 +23,7 @@ def mgmt(request):
     return render(request, 'mgmt/pages/index.html', context)
 
 
+@login_required(login_url='login')
 def search_results(request):
     qs = Inquiries.objects.all()
     qs_inquiry_type = InquiryType.objects.all()
@@ -54,6 +57,7 @@ def search_results(request):
     return render(request, 'mgmt/pages/search_results.html', context)
 
 
+@login_required(login_url='login')
 def inquiry_detail(request, pk):
     qs_inquiry_type = InquiryType.objects.all()
     qs_status = Status.objects.all()

@@ -13,7 +13,7 @@ def home(request):
         form = InquiriesForm(request.POST)
         if form.is_valid():
             form.save()
-    return render(request, 'home/base.html', {'form': form})
+    return render(request, 'home/pages/index.html', {'form': form})
 
 
 # AJAX
