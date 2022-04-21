@@ -8,8 +8,9 @@
                 </div>
             </div>
             <div class="col-7 mt-5 pb-4 px-4">
-                <form method="post" id="inquiriesForm" data-cities-url="{% url 'ajax_load_cities' %}">
+                <form method="POST" id="inquiriesForm" data-cities-url="{% url 'ajax_load_cities' %}">
                     {% csrf_token %}
+
                     <div class="row">
                         <div class="col-md-4">
                             <label for="last_name" class="form-label">Last Name</label>
