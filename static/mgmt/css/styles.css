@@ -1,9 +1,6 @@
 /* main */
-.btn {
-    color: #fff;
-}
-
 .btn-default {
+    color: #fff;
     background: #85bb65;
 }
 
@@ -24,6 +21,13 @@
 
 .sb-sidenav-menu .btn {
     margin: 1rem 1rem;
+    display: block;
+    width: 190px;
+}
+
+.form-errors {
+    color: #dc3545;
+    font-style: italic;
 }
 
 /* nav */
